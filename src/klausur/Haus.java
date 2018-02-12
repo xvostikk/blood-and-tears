@@ -3,20 +3,56 @@ package klausur;
 import java.util.Random;
 
 public class Haus {
-	public Wohnung [] wohnungen;
+	private Wohnung [] wohnungen;
 	
-	public int neueWohnung() {
+	//Objektmethode die gibt ein Objekt Typ Wohnung zurück
+	public Wohnung neueWohnung() {
 		Random r = new Random();
-		int qmMin = 20;
-		int qmMax = 100;
-		int qm = r.nextInt(20) + 20;
-		int anzZimmer = r.nextInt(1) + 1;
-		int etage = r.nextInt() * 5;
-		double min = 8.5;
-		double max = 12.5;
-		double qmMiete = ((min + (max - min) + 0.5)) * r.nextDouble();	
-		return 0;
+		
+		// 1. Variante: Array
+		int qms[] = {20, 40, 60, 80, 100};
+		int qm = qms[r.nextInt(qms.length)];
+		
+		// 2. Variante: min/max
+		//int qmMin = 20;
+		//int qmMax = 100;
+		//int qm = qmMin + r.nextInt(qmMax - qmMin + 1);
+		int anzZimmer = 1 + r.nextInt(5);
+		int etage = r.nextInt(6);
+		
+		
+		double qmMieten[] = {8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5};
+		double qmMiete = qmMieten[r.nextInt(qmMieten.length)];
+		
+		//double qmMieteMin = 8.5;
+		//double qmMieteMax = 12.5;
+		//double qmMieteStep = 0.5;
+		//int qmMieteNumSteps = (int)((qmMieteMax - qmMieteMin) / qmMieteStep);
+		//double qmMiete = qmMieteMin + r.nextInt(qmMieteNumSteps + 1) * qmMieteStep;	
+		if(etage == 5) {
+			return new Dachgeschosswohnung(qm, anzZimmer, qmMiete);
+		}
+		
+		return new Wohnung(qm, anzZimmer, qmMiete, etage);
 		
 	}
+	
+	//Konstruktor
+	public Haus (int anzWohnungen) {
+		wohnungen = new Wohnung [anzWohnungen];
+		
+		for (int index = 0; index < anzWohnungen; index++) {
+		wohnungen[index] = neueWohnung();
+	}
+	
+	}
+	
+	public void print() {
+		System.out.println("Das Haus besteht aus: ");
 
+		for (int index = 0; index < wohnungen.length; index++) {
+			System.out.print("  ");
+			wohnungen[index].print();
+		}
+	}
 }

@@ -55,12 +55,12 @@ public class Wohnung {
 	@Override
 	public String toString() {
 		if (etage == 0) {
-			return anzZimmer + "-Zimmer Wohnung mit " + qm + " qm im Erdgeschoss.\n "
-					+ "Monatliche Miete: " + gesamtMiete() + " Euro\n\n";
+			return anzZimmer + "-Zimmer Wohnung mit " + qm + " qm im Erdgeschoss. "
+					+ "Monatliche Miete: " + gesamtMiete() + " Euro";
 		}
 		else {
 			 return anzZimmer + "-Zimmer Wohnung mit " + qm + " qm in der " + etage
-					 + ". etage. \n Monatliche Miete: " + gesamtMiete() + " Euro\n\n";
+					 + ". etage.  Monatliche Miete: " + gesamtMiete() + " Euro";
 		}
 		
 	}

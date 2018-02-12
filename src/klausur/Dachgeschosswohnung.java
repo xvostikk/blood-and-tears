@@ -9,8 +9,8 @@ public class Dachgeschosswohnung extends Wohnung{
 	
 	@Override
 	public String toString() {	
-			return getAnzZimmer() + "-Zimmer DG Wohnung mit " + getQm() + " qm in der 5. Etage.\n "
-					+ "Monatliche Miete: " + gesamtMiete() + " Euro\n\n";
+			return getAnzZimmer() + "-Zimmer DG Wohnung mit " + getQm() + " qm in der 5. Etage. "
+					+ "Monatliche Miete: " + gesamtMiete() + " Euro";
 	}
 	
 	
