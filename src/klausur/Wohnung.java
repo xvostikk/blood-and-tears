@@ -2,10 +2,10 @@ package klausur;
 
 public class Wohnung {
 	//Objektvariablen, nur innerhalb der Klasse sichtbar
-	protected int qm;
-	protected int anzZimmer;
-	protected int etage;
-	protected double qmMiete; //Mietpreis pro m2
+	private int qm;
+	private int anzZimmer;
+	private int etage;
+	private double qmMiete; //Mietpreis pro m2
 	
 	//getter mit Sichtbarkeit public
 	public int getQm() {
@@ -34,32 +34,39 @@ public class Wohnung {
 	}	
 	
 	public boolean billiger(Wohnung w) {
-		if () {
+		/*if (gesamtMiete() < w.gesamtMiete()) {
 			return true;
 		}
 		else {
 			return false;
-		}
+		}*/
+		return gesamtMiete() < w.gesamtMiete();
 	}
 	
 	public boolean teuerer(Wohnung w) {
-		if () {
+		if (gesamtMiete() > w.gesamtMiete()) {
 			return true;
 		}
-		else {
+		else { 
 			return false;
 		}
 	}
 	
+	@Override
 	public String toString() {
-		if (etage <= 0) {
-			System.out.println(anzZimmer + " Wohnung mit " + qm + " qm im Erdgeschoss.\\r\\n "
-					+ "Monatliche Miete: " + gesamtMiete() + " Euro");
+		if (etage == 0) {
+			return anzZimmer + "-Zimmer Wohnung mit " + qm + " qm im Erdgeschoss.\n "
+					+ "Monatliche Miete: " + gesamtMiete() + " Euro\n\n";
 		}
-		if (etage >= 1) {
-			System.out.println(anzZimmer + " Wohnung mit " + qm + " qm in der " + etage
-					+ ". etage. \\\\r\\\\n Monatliche Miete: " + gesamtMiete() + " Euro");
+		else {
+			 return anzZimmer + "-Zimmer Wohnung mit " + qm + " qm in der " + etage
+					 + ". etage. \n Monatliche Miete: " + gesamtMiete() + " Euro\n\n";
 		}
-		return toString();
+		
+	}
+	
+	public void print() {
+		System.out.println(toString());
+		
 	}
 }

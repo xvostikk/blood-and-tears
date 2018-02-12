@@ -2,17 +2,17 @@ package klausur;
 
 public class Dachgeschosswohnung extends Wohnung{
 
-	public Dachgeschosswohnung(int qm, int anzZimmer, double qmMiete, int etage) {
-		super(qm, anzZimmer, qmMiete, etage);
+	public Dachgeschosswohnung(int qm, int anzZimmer, double qmMiete) {
+		super(qm, anzZimmer, qmMiete, 5);
 		// TODO Auto-generated constructor stub
 	}
 	
-	public String toString() {
-		
-			System.out.println(anzZimmer + " DG Wohnung mit " + qm + " qm in der 5. Etage.\\r\\n "
-					+ "Monatliche Miete: " + gesamtMiete() + " Euro");
-		
-		return toString();
+	@Override
+	public String toString() {	
+			return getAnzZimmer() + "-Zimmer DG Wohnung mit " + getQm() + " qm in der 5. Etage.\n "
+					+ "Monatliche Miete: " + gesamtMiete() + " Euro\n\n";
 	}
+	
+	
 
 }
