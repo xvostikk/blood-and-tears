@@ -8,10 +8,15 @@ public class KlausurMain {
 		Dachgeschosswohnung w3 = new Dachgeschosswohnung(100, 4, 12.5);
 		Haus h1 = new Haus(5);
 		
+
 		w1.print();
 		w2.print();
 		w3.print();
 		h1.print();
+		
+		System.out.println("Wohnungen in Etage 2");
+		for (Wohnung wohnung : h1.wohnungenInEtage(2)) {
+			wohnung.print();
+		}
 	}
-
 }
