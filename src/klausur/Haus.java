@@ -76,5 +76,12 @@ public class Haus {
 		return ergebnis;
 	}
 	
-	
+	/**
+	public void print(Wohnung[] wohnungen) {
+		for (int index = 0; index == wohnungen.length; index++) {
+			System.out.println(wohnungen);
+		}
+		
+	}**/
+
 }
