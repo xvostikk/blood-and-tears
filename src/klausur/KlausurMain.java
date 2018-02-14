@@ -1,7 +1,5 @@
 package klausur;
 
-import com.sun.org.apache.xml.internal.utils.Hashtree2Node;
-
 public class KlausurMain {
 
 	public static void main(String[] args) {
