@@ -12,7 +12,5 @@ public class Dachgeschosswohnung extends Wohnung{
 			return getAnzZimmer() + "-Zimmer DG Wohnung mit " + getQm() + " qm in der 5. Etage. "
 					+ "Monatliche Miete: " + gesamtMiete() + " Euro";
 	}
-	
-	
 
 }
