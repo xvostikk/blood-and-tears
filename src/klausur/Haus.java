@@ -76,11 +76,23 @@ public class Haus {
 		return ergebnis;
 	}
 	
-	/**
 	public void print(Wohnung[] wohnungen) {
-		for (int index = 0; index == wohnungen.length; index++) {
-			System.out.println(wohnungen);
+		for (int index = 0; index < wohnungen.length; index++) {
+			Wohnung k = wohnungen[index];
+			System.out.println(k);
 		}
+		
+	}
+	/**
+	public Wohnung teuersteWohnung() {
+		
+	}
+	
+	public double gesamtMieteHaus() {
+		
+	}
+	
+	public void sortieren() {
 		
 	}**/
 

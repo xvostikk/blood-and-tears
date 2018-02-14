@@ -16,8 +16,6 @@ public class KlausurMain {
 		h1.print();
 
 		System.out.println("Wohnungen in Etage 2");
-		for (Wohnung wohnung : h1.wohnungenInEtage(2)) {
-			wohnung.print();
-		}
+		h1.print(h1.wohnungenInEtage(2));
 	}
 }
