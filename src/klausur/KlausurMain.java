@@ -7,13 +7,19 @@ public class KlausurMain {
 		Wohnung w2 = new Wohnung(40, 1, 7.5, 0);
 		Dachgeschosswohnung w3 = new Dachgeschosswohnung(100, 4, 12.5);
 		Haus h1 = new Haus(5);
+		Haus h2 = new Haus(etage);
 
 		w1.print();
 		w2.print();
 		w3.print();
 		h1.print();
+		h2.print();
 
 		System.out.println("Wohnungen in Etage 2");
 		h1.print(h1.wohnungenInEtage(2));
+		
+		System.out.println("Wohnungen in Etage");
+		h2.print(h2.wohnungenInEtage("Etage" + etage + "----------------------" ));
+		
 	}
 }
