@@ -117,9 +117,9 @@ public class Haus {
 		return 0;
 	}
 
-	public double gesamtMieteHaus() {
-
-	}
+//	public double gesamtMieteHaus() {
+//
+//	}
 
 	// e: Sortieren Wohnungen nach Preis
 	public void sortieren() {
@@ -130,5 +130,5 @@ public class Haus {
 
 		}
 
-	}
+	}s
 }
