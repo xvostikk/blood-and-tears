@@ -18,8 +18,8 @@ public class KlausurMain {
 		System.out.println("Wohnungen in Etage 2");
 		h1.print(h1.wohnungenInEtage(2));
 		
-		System.out.println("Wohnungen in Etage");
-//		h2.print(h2.Wohnungen[] ("Etage" + etage + "----------------------" ));
+		System.out.println("Etage " + etage + "------------------");
+		h2.print(h2.wohnungenInEtage(etage));
 		
 	}
 }
