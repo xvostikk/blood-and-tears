@@ -73,7 +73,7 @@ public class Haus {
 		}
 	}
 
-	// Objektmethode, die gibt ein Wohnung[] Array zurück mit alle die in etage 2
+	// Objektmethode, die gibt ein Wohnung[] Array zurück 
 	// liegen.
 	public Wohnung[] wohnungenInEtage(int etage) {
 		int wohnungenInEtage = 0;
@@ -108,27 +108,47 @@ public class Haus {
 	}
 
 	public Wohnung teuersteWohnung() {
-		double min = Double.MIN_VALUE;
-		double max = Double.MAX_VALUE;
+		// Am Anfang ist noch keine Wohnung mit Max-Miete bekannt
+		Wohnung maxMiete = null;
+		
+		// Gehe alle Wohnungen durch
 		for (int index = 0; index < wohnungen.length; index++) {
-			System.out.println("Die teuerste Wohnung ist: ");
+			// Hole wohnung aus dem Array
+			Wohnung k = wohnungen[index];
+			
+			// Wenn noch keine Wohnung mit Max-Miete bekannt ODER die Miete von k > als die von Max-Miete
+			// dann haben wir eine neue teuerste Wohnung gefunden
+			if(maxMiete == null || k.gesamtMiete() > maxMiete.gesamtMiete()) {
+				maxMiete = k;
+			}
 		}
 
-		return 0;
+		return maxMiete;
 	}
 
-//	public double gesamtMieteHaus() {
-//
-//	}
+	public double gesamtMieteHaus() {
+		double summe = 0;
+		
+		for(int index = 0; index < wohnungen.length; index++) {
+			Wohnung k = wohnungen[index];
+			summe = k.gesamtMiete() + summe;
+		}
+		return summe;
+
+	}
 
 	// e: Sortieren Wohnungen nach Preis
+	//Bubblesort
 	public void sortieren() {
-		for (int index = 0; index < wohnungen.length; index++) {
-			Wohnung k = wohnungen[index];
-			Arrays.sort(wohnungen);
-			System.out.println("Das Haus besteht aus (alle Wohnungen): ");
-
+		for (int n = wohnungen.length; n>1; n= n-1) {
+			for(int i=0; i<n-1; i=i+1) {
+				if (wohnungen[i+1].billiger(wohnungen[i]) ) {
+					Wohnung tmp = wohnungen[i];
+					wohnungen[i] = wohnungen[i+1];
+					wohnungen[i+1] = tmp;
+				}
+			}
+			
 		}
-
 	}
 }
