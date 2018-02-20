@@ -29,9 +29,6 @@ public class KlausurMain {
 		
 		System.out.println("Die Gesamtmiete für das Haus ist " + h2.gesamtMieteHaus());
 		
-		System.out.println("Haus 2 unsortiert");
-		h2.print();
-		
 		h2.sortieren();
 		System.out.println("Haus 2 sortiert");
 		h2.print();
